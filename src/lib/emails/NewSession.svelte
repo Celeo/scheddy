@@ -2,7 +2,7 @@
 	import type { NewSessionProps } from '$lib/emails/new_session';
 	import { DateTime } from 'luxon';
 
-	let { startTime, duration, studentName, sessionId, type, timezone }: NewSessionProps = $props();
+	let { startTime, duration, studentName, sessionId, type, timezone, facilityName, emailDomain }: NewSessionProps = $props();
 </script>
 
 <h1>New session booked</h1>
