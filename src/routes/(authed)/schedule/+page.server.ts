@@ -311,7 +311,9 @@ export const actions: Actions = {
 			sessionId: id,
 			type: typename,
 			link_params: `?sessionId=${id}&reschedule=true&type=${requestedType}`,
-			reschedule
+			reschedule,
+			facilityName: PUBLIC_FACILITY_NAME,
+			emailDomain: EMAIL_ARTCC_DOMAIN
 		});
 		const mentorEmailContent = new_session({
 			startTime: start.setZone(mentor.timezone),
