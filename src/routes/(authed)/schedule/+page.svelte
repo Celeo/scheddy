@@ -12,6 +12,7 @@
 	import Modal from '$lib/ui/modal/Modal.svelte';
 	import ModalHeader from '$lib/ui/modal/ModalHeader.svelte';
 	import ModalFooter from '$lib/ui/modal/ModalFooter.svelte';
+	import { page } from '$app/stores';
 
 	interface Props {
 		data: PageData;
@@ -119,7 +120,7 @@
 		rdata.set('type', sessionType!);
 		rdata.set('timezone', timezone);
 		rdata.set('sessionId', data.originalSessionId);
-		rdata.set('reschedule', true);
+		rdata.set('reschedule', $page.url.searchParams.has('reschedule') ? 'true' : 'false');
 
 		let r = await fetch('?/book', {
 			method: 'POST',
