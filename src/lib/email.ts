@@ -60,5 +60,9 @@ export async function sendEmail(
 			}
 		];
 	}
-	return emailTransporter.sendMail(options);
+
+	console.log(`Attempting to send email to ${to} with subject ${subject}`);
+	const result = emailTransporter.sendMail(options);
+	console.log('Email sent');
+	return result;
 }
